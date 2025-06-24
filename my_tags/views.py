@@ -1,5 +1,8 @@
 from django.shortcuts import render
 import datetime
+from django.utils.safestring import mark_safe
+import markdown
+from .models import Blog  
 
 # Create your views here.
 from django.shortcuts import render
@@ -26,3 +29,9 @@ def filter_demo(request):
     return render(request, 'filters.html', context)
 def login(request):
     return render(request, 'login.html')
+
+def blog_list(request):
+    blogs = Blog.objects.prefetch_related('editors').all()
+    for blog in blogs:
+        blog.rendered_text = mark_safe(markdown.markdown(blog.text))
+    return render(request, 'blog_list.html', {'blogs': blogs})
