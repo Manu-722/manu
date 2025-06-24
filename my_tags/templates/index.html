@@ -1,0 +1,24 @@
+{% extends "base.html"%}
+{% load static %}
+{% block title%} Learning Django templates {% endblock title%}
+{% block content %}
+<h2>{{ message }}</h2>
+{% comment %} Django template tags {% endcomment %}
+{% comment %} {% tag_name argument1 argument2 %}{% endtag_name %} {% endcomment %}
+{% if user.authenticated %}
+    Welcome, {{ user.username }}!
+{% else %}
+    please log in to access
+{% endif %}
+{% comment %} For tag {% endcomment %}
+<ul>
+    {% for item in items%}
+    <li>{{ item }}</li>
+    {% endfor %}
+</ul>
+<img src="{% static 'images/image.jpg' %}" alt="" class="w-64 h-auto rounded shadow-md">
+{% comment %} Block {% endcomment %}
+{% comment %} {% block title %}
+Django Template tags
+{% endblock title%} {% endcomment %}
+{% endblock content%}

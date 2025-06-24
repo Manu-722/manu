@@ -1,0 +1,19 @@
+<nav class="bg-green-600 p-4 shadow-md">
+  <ul class="flex flex-col sm:flex-row sm:justify-center gap-4 text-white text-lg font-medium">
+    <li>
+      <a href="{% url 'index' %}" class="hover:text-red-200 transition-colors">Home</a>
+    </li>
+    <li>
+      <a href="{% url 'contact' %}" class="hover:text-red-200 transition-colors">Contact</a>
+    </li>
+    <li>
+      <a href="{% url 'about' %}" class="hover:text-red-200 transition-colors">About</a>
+    </li>
+    <li>
+      <a href="{% url 'filters' %}" class="hover:text-red-200 transition-colors">Filters</a>
+    </li>
+    <li>
+      <a href="{% url 'login' %}" class="hover:text-red-200 transition-colors">Login</a>
+    </li>
+  </ul>
+</nav>

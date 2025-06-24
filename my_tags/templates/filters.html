@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %}Filters{% endblock title%}
+{% block content %}
+<h2>{{ my_string | upper}} </h2>
+
+<h2>Date</h2>
+<p>Date: {{my_date | date:"F j, Y"}}</p>
+<h2>Truncate Characters</h2>
+<p>Truncated:{{ long_string |truncatechars:14}}
+
+
+<h2>String Length</h2>
+<p>String length: {{ string_length | length }}</p>
+<h2>Default string</h2>
+<p>Optional Value: {{ optional_value|default:"This is the default value." }}</p>
+
+<h2>Text Formatting</h2>
+<p>Capfirst: {{ my_string | capfirst }}</p>
+
+<h2>String Operations</h2>
+<p>Join: {{ string_length | join:"-" }}</p>
+<p>Slice: {{ long_string | slice:":10" }}</p>
+
+<h2>Word & Line Formatting</h2>
+<p>Word Count: {{ long_string | wordcount }}</p>
+<p>Line Breaks: {{ text_with_breaks | linebreaks }}</p>
+
+{% comment %} <h2>Text Formatting</h2> {% endcomment %}
+{% comment %} <p>Capfirst: {{ my_string | capfirst }}</p> {% endcomment %}
+
+
+
+
+{% endblock content %}
