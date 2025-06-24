@@ -5,11 +5,11 @@
 <h2>{{ message }}</h2>
 {% comment %} Django template tags {% endcomment %}
 {% comment %} {% tag_name argument1 argument2 %}{% endtag_name %} {% endcomment %}
-{% if user.authenticated %}
+{% comment %} {% if user.authenticated %}
     Welcome, {{ user.username }}!
 {% else %}
     please log in to access
-{% endif %}
+{% endif %} {% endcomment %}
 {% comment %} For tag {% endcomment %}
 <ul>
     {% for item in items%}
