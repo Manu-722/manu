@@ -4,6 +4,8 @@
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
+# import uuid
+
 
 # Create your models here.
 
@@ -26,3 +28,11 @@ class Editor(models.Model):
 
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
+class Subscriber(models.Model):
+    email = models.EmailField(unique=True)
+    created_at = models.DateField(auto_now_add=True)
+    def __str__(self):
+        return self.email   
+
+
+
